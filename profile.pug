@@ -1,0 +1,17 @@
+include ./mixins/navbar
+doctype html
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        title TheCandle.com
+        link(rel="stylesheet", href="/css/style.css") 
+            
+    body 
+        +navbar(userDetail)
+        .container1  
+            h1 Profile 
+            p #{userDetail.name} 
+            p #{userDetail.email} 
+            //img(src="userDetail.profilepic", alt="profile pic")
+            a(href="/logout") Logout

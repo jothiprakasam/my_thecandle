@@ -1,0 +1,23 @@
+include ./mixins/navbar
+doctype html
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        title TheCandle.com
+        link(rel="stylesheet", href="/css/style.css") 
+            
+    body 
+        +navbar(userDetail)
+        .container 
+            h1 home page
+             p Welcome to TheCandle.com! Feel free to post your messages below.
+
+            // Your message post area could be a form or a textarea, for example:
+            form(action="/post-message", method="post")
+                label(for="message") Your Message:
+                textarea(name="message", id="message", rows="4", cols="50")
+                input(type="hidden", name="email", value=userDetail.email)
+                button(type="submit") Post Message
+
+        
